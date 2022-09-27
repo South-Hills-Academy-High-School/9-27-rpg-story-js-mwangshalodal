@@ -87,6 +87,7 @@ function finalChoice() {
     blockObject.setAnyProperty(FinalChoice2, AnyProp.Choice1, happyEnding())
     blockObject.setAnyProperty(FinalChoice2, AnyProp.Choice2, 0)
     blockObject.setAnyProperty(FinalChoice1, AnyProp.Choice2, sadEnding())
+    blockObject.setAnyProperty(FinalChoice1, AnyProp.Choice2,superHappyEndin())
     return FinalChoice1
 }
 function happyEnding() {
@@ -98,6 +99,14 @@ function happyEnding() {
     blockObject.setAnyProperty(happy2, AnyProp.NextPage, happy3)
     blockObject.setAnyProperty(happy3, AnyProp.NextPage, happy4)
     return happy1
+}
+let she1: blockObject.BlockObject = null
+let she2: blockObject.BlockObject = null
+function superHappyEndin(){
+    she1 = createScript("Mr. kao","I'm so happy",1)
+    she2 = createScript("pineapple","Me too!",3)
+    blockObject.setAnyProperty(she1, AnyProp.NextPage, she2)
+    return she1
 }
 let sadendin1: blockObject.BlockObject = null
 let sadendin2: blockObject.BlockObject = null
