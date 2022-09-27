@@ -86,6 +86,7 @@ function finalChoice() {
     blockObject.setStringArrayProperty(FinalChoice2, StrArrayProp.Choices, ["Please!", "BUZZ OFF!!!!"])
     blockObject.setAnyProperty(FinalChoice2, AnyProp.Choice1, happyEnding())
     blockObject.setAnyProperty(FinalChoice2, AnyProp.Choice2, 0)
+    blockObject.setAnyProperty(FinalChoice1, AnyProp.Choice2, sadEnding())
     return FinalChoice1
 }
 function happyEnding() {
@@ -97,6 +98,14 @@ function happyEnding() {
     blockObject.setAnyProperty(happy2, AnyProp.NextPage, happy3)
     blockObject.setAnyProperty(happy3, AnyProp.NextPage, happy4)
     return happy1
+}
+let sadendin1: blockObject.BlockObject = null
+let sadendin2: blockObject.BlockObject = null
+function sadEnding() {
+    sadendin1 = createScript("Mr. Kao","I will go to the bathroom now, BYE!",2)
+    sadendin2 = createScript("Pineapple","Don't leave me, my boss will kill me! :(",2)
+    blockObject. setAnyProperty(sadendin1, AnyProp.NextPage,sadendin2)
+    return sadendin1
 }
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (choiceIndex == 1) {
